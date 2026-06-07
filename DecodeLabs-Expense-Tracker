@@ -1,0 +1,56 @@
+expenses = []
+
+while True:
+
+    print("\n===== EXPENSE TRACKER =====")
+    print("1. Add Expense")
+    print("2. View Expenses")
+    print("3. Total Expenses")
+    print("4. Highest Expense")
+    print("5. Lowest Expense")
+    print("6. Average Expense")
+    print("7. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        amount = float(input("Enter Expense Amount: "))
+        expenses.append(amount)
+        print("Expense Added Successfully!")
+
+    elif choice == "2":
+        if len(expenses) == 0:
+            print("No expenses found.")
+        else:
+            print("\nExpenses List:")
+            for expense in expenses:
+                print(expense)
+
+    elif choice == "3":
+        print("Total Expense =", sum(expenses))
+
+    elif choice == "4":
+        if expenses:
+            print("Highest Expense =", max(expenses))
+        else:
+            print("No data available.")
+
+    elif choice == "5":
+        if expenses:
+            print("Lowest Expense =", min(expenses))
+        else:
+            print("No data available.")
+
+    elif choice == "6":
+        if expenses:
+            average = sum(expenses) / len(expenses)
+            print("Average Expense =", average)
+        else:
+            print("No data available.")
+
+    elif choice == "7":
+        print("Thank You!")
+        break
+
+    else:
+        print("Invalid Choice!")
